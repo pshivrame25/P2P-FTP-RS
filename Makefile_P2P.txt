@@ -1,0 +1,36 @@
+Makefile for Centralised File Distribution System:
+--> In order to recreate the scenario mentioned in the project, 6 peers are required and one Registration server.
+-->We have created three different files in the folder i.e. Client, RS, and RFC_Server
+--> 10 RFCs are also included in the each client folder
+--> Turn off all the Windows and other firewalls.
+-->The code is written in python 3.7, use a compiler that supports python 3 and above versions.
+
+Prerequisites:
+1. Make one PC as the RS and save the RS file in it
+2. Use 6 other PCs as peers.
+3. Change the RS_server variable to the IP address of the RS that will be used for the implementation in the RFC_client.py file(line 274).
+Note: You can use RS and Client on the same machine, make sure they are placed in different folders.
+4.Note down the IP and port number of each peer, and replace them in the code with the ones predefined from line 159 to line 181.
+replace req_rfc_rec.hostname == "IP of the host"
+--> getrfc_socket.connect((req_rfc_rec.hostname, 1259)), replace 1259 with the server port for that host ip.
+Do this for all the client codes or make changes in one client code and replace them all the clients.
+
+
+Implementation:
+1. Start the RS before any other peers or server.
+RUN --> python RS.py
+2. Once the RS is up, start the server.
+RUN --> python RFC_Server.py
+3. Now, run the client code in each peer simultaneously.
+--> python RFC_client.py
+
+Output:
+1.The Downloaded RFCs will be placed in the same folder as the RFC_client.
+2.Check the log_file for retrival time.
+3.Check rfc_list_file for the rfc index
+4.Check peer_list for the list of peers.
+  
+
+
+
+
